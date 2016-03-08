@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "snyk test && semistandard && lab",
-    "test-cov-html": "lab -r html -o coverage.html -a code",
+    "test-cov-html": "lab -r html -o coverage.html",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },

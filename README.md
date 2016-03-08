@@ -3,7 +3,6 @@
 [**hapi**](https://github.com/hapijs/hapi) database connector
 
 [![Build Status](https://travis-ci.org/thebergamo/k7.svg)](https://travis-ci.org/thebergamo/k7)
-[![Coverage Status](https://coveralls.io/repos/thebergamo/k7/badge.svg?branch=master&service=github)](https://coveralls.io/github/thebergamo/k7?branch=master)
 [![Dependencies Status](https://david-dm.org/thebergamo/k7.svg)](https://david-dm.org/thebergamo/k7)
 [![DevDependencies Status](https://david-dm.org/thebergamo/k7/dev-status.svg)](https://david-dm.org/thebergamo/k7#info=devDependencies)
 [![Known Vulnerabilities](https://snyk.io/test/npm/k7/badge.svg)](https://snyk.io/test/npm/k7)
