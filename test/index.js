@@ -8,7 +8,6 @@ const Hapi = require('hapi');
 
 // Load example
 
-const K7 = require('../lib/k7');
 const Adapter = require('./adapter');
 
 // Test shortcuts
@@ -45,7 +44,7 @@ describe('K7', () => {
 
       done();
     });
-  }); 
+  });
 
   it('should register the plugin with an array of models in options', (done) => {
     server = new Hapi.Server();
@@ -69,13 +68,10 @@ describe('K7', () => {
 
       done();
     });
-  
   });
-
 
   it('should register the plugin with adapter as string', (done) => {
     server = new Hapi.Server();
-
     options.adapter = '../test/adapter';
 
     const register = {
@@ -95,7 +91,5 @@ describe('K7', () => {
 
       done();
     });
-  
   });
-
 });

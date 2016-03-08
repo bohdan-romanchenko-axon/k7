@@ -4,7 +4,10 @@
   "description": "Connect your database with Hapijs made easy",
   "main": "index.js",
   "scripts": {
-    "test": "lab"
+    "test": "snyk test && semistandard && lab",
+    "test-cov-html": "lab -r html -o coverage.html -a code",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -23,7 +26,17 @@
   },
   "homepage": "https://github.com/thebergamo/k7#readme",
   "dependencies": {
-    "glob": "^7.0.0",
-    "hoek": "^3.0.4"
+    "glob": "7.0.x",
+    "hoek": "3.0.x"
+  },
+  "snyk": true,
+  "peerDependencies": {
+    "hapi": ">=10.x.x"
+  },
+  "devDependencies": {
+    "code": "2.x.x",
+    "lab": "10.x.x",
+    "semistandard": "7.x.x",
+    "snyk": "1.11.x"
   }
 }

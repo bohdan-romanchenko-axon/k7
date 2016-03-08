@@ -11,4 +11,4 @@ internals.Adapter.attributes = {
 
 internals.Adapter.prototype.load = function () {
   return {};
-}
+};
