@@ -44,10 +44,22 @@ Server.register({
 });
 ```
 
-This example does: 
-1. Setting the k7-mongoose adapter
-2. Setting the connectionString for mongoose connect
-3. Register the k7 to Hapi.js
+This example does:  
+1. Setting the k7-mongoose adapter  
+2. Setting the connectionString for mongoose connect  
+3. Register the k7 to Hapi.js  
+
+## Options
+k7 have minimal options, and the major options are specified in ours Adapters. 
+
+* **connectionString**: Is a common option, specified a connectionString to connecto in your database.
+* **connectionOptions**: Is a common option, where you will specify the options passed for the connector. 
+* **models**: Is a comoon option, where you will specify how we can find your models. **Default**: `models/*.js` In this option you can pass a String or an Array of files or glob patterns like: `**/model.js`
+
+## Where my Models?
+Your models will be available in `server.database` all of your databases will be there. In `server.database` have the instance of the Database Mapper used too.
+
+If your model are in a file called `models/user.js`, the model will be avaiblable as `server.database.User`.
 
 ## Adapters
 * [k7-bookshelf][k7-bookshelf] (WIP)
