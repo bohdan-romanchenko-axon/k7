@@ -25,14 +25,15 @@
   "homepage": "https://github.com/thebergamo/k7#readme",
   "dependencies": {
     "glob": "7.0.x",
-    "hoek": "3.0.x"
+    "hoek": "3.0.x",
+    "snyk": "^1.11.3"
   },
-  "snyk": true,
   "peerDependencies": {
     "hapi": ">=10.x.x"
   },
   "devDependencies": {
     "code": "2.x.x",
+    "hapi": "10.x.x",
     "lab": "10.x.x",
     "semistandard": "7.x.x"
   }
