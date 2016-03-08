@@ -4,10 +4,8 @@
   "description": "Connect your database with Hapijs made easy",
   "main": "index.js",
   "scripts": {
-    "test": "snyk test && semistandard && lab",
-    "test-cov-html": "lab -r html -o coverage.html",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "test": "semistandard && lab",
+    "test-cov-html": "lab -r html -o coverage.html"
   },
   "repository": {
     "type": "git",
@@ -36,7 +34,6 @@
   "devDependencies": {
     "code": "2.x.x",
     "lab": "10.x.x",
-    "semistandard": "7.x.x",
-    "snyk": "1.11.x"
+    "semistandard": "7.x.x"
   }
 }
