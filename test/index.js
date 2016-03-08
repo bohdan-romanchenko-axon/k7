@@ -29,7 +29,7 @@ describe('K7', () => {
     server = new Hapi.Server();
     const register = {
       register: require('../index'),
-      options: options
+      options
     };
 
     server.register([register], (err) => {
@@ -53,7 +53,7 @@ describe('K7', () => {
 
     const register = {
       register: require('../index'),
-      options: options
+      options
     };
 
     server.register([register], (err) => {
@@ -76,7 +76,7 @@ describe('K7', () => {
 
     const register = {
       register: require('../index'),
-      options: options
+      options
     };
 
     server.register([register], (err) => {
