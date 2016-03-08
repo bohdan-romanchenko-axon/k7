@@ -1,6 +1,6 @@
 {
   "name": "k7",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connect your database with Hapijs made easy",
   "main": "index.js",
   "scripts": {
