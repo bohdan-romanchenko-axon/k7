@@ -1,6 +1,6 @@
 {
   "name": "k7",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Connect your database with Hapijs made easy",
   "main": "index.js",
   "scripts": {
@@ -25,8 +25,7 @@
   "homepage": "https://github.com/thebergamo/k7#readme",
   "dependencies": {
     "glob": "7.0.x",
-    "hoek": "3.0.x",
-    "snyk": "^1.11.3"
+    "hoek": "3.0.x"
   },
   "peerDependencies": {
     "hapi": ">=10.x.x"
