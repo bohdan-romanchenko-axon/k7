@@ -8,7 +8,7 @@ const Hapi = require('hapi');
 
 // Load example
 
-const Adapter = require('./adapter');
+const Adapter = require('./fixture/adapter');
 
 // Test shortcuts
 
@@ -17,79 +17,103 @@ const it = lab.it;
 const expect = Code.expect;
 const describe = lab.describe;
 
-describe('K7', () => {
-  let server;
-  let options = {
+const adapterOptions = {
     connectionString: 'mongodb://localhost:27017/k7',
     models: 'test/**/model.js',
     adapter: Adapter
-  };
+};
 
-  it('should register the plugin', (done) => {
-    server = new Hapi.Server();
-    const register = {
-      register: require('../index'),
-      options
-    };
+describe('k7', () => {
 
-    server.register([register], (err) => {
-      // No errors
+    let server;
 
-      expect(err).to.not.exist;
+    it('should register the plugin', { plan: 3 }, (done) => {
 
-      // Instance of K7 should be registered
+        server = new Hapi.Server();
+        const register = {
+            register: require('../lib/index'),
+            options: adapterOptions
+        };
 
-      expect(server).to.deep.include('database');
-      expect(server.database).to.be.an.object();
+        server.register([register], (err) => {
+            // No errors
 
-      done();
+            expect(err).to.not.exist();
+
+            // Instance of K7 should be registered
+
+            expect(server).to.include('database');
+            expect(server.database).to.be.an.object();
+
+            done();
+        });
     });
-  });
 
-  it('should register the plugin with an array of models in options', (done) => {
-    server = new Hapi.Server();
+    it('should register the plugin with an array of models in options', { plan: 3 }, (done) => {
 
-    options.models = [options.models];
+        server = new Hapi.Server();
 
-    const register = {
-      register: require('../index'),
-      options
-    };
+        adapterOptions.models = [adapterOptions.models];
 
-    server.register([register], (err) => {
-      // No errors
+        const register = {
+            register: require('../lib/index'),
+            options: adapterOptions
+        };
 
-      expect(err).to.not.exist;
+        server.register([register], (err) => {
+            // No errors
 
-      // Instance of K7 should be registered
+            expect(err).to.not.exist();
 
-      expect(server).to.deep.include('database');
-      expect(server.database).to.be.an.object();
+            // Instance of K7 should be registered
 
-      done();
+            expect(server).to.include('database');
+            expect(server.database).to.be.an.object();
+
+            done();
+        });
     });
-  });
 
-  it('should register the plugin with adapter as string', (done) => {
-    server = new Hapi.Server();
-    options.adapter = '../test/adapter';
+    it('should register the plugin with adapter as string', { plan: 3 }, (done) => {
 
-    const register = {
-      register: require('../index'),
-      options
-    };
+        server = new Hapi.Server();
+        adapterOptions.adapter = '../test/fixture/adapter';
 
-    server.register([register], (err) => {
-      // No errors
+        const register = {
+            register: require('../lib/index'),
+            options: adapterOptions
+        };
 
-      expect(err).to.not.exist;
+        server.register([register], (err) => {
+            // No errors
 
-      // Instance of K7 should be registered
+            expect(err).to.not.exist();
 
-      expect(server).to.deep.include('database');
-      expect(server.database).to.be.an.object();
+            // Instance of K7 should be registered
 
-      done();
+            expect(server).to.include('database');
+            expect(server.database).to.be.an.object();
+
+            done();
+        });
     });
-  });
+
+    it('should register the plugin with adapter as string', { plan: 1 }, (done) => {
+
+        server = new Hapi.Server();
+        adapterOptions.adapter = '../test/fixture/fake';
+
+        const register = {
+            register: require('../lib/index'),
+            options: adapterOptions
+        };
+
+        server.register([register], (err) => {
+            // No errors
+
+            expect(err).to.exist();
+
+            done();
+        });
+    });
 });
